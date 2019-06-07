@@ -1,0 +1,215 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>
+        @{
+            ViewData["Title"] = Model.Tytul;
+        }
+    </title>
+
+    <!-- CSS  -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="~/lib/materialize/css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection" />
+    <link href="~/lib/materialize/css/style.css" type="text/css" rel="stylesheet" media="screen,projection" />
+
+</head>
+<body>
+    <nav class="white" role="navigation">
+
+        @Html.Partial("Odnosniki", (IEnumerable<Firma.Data.Data.CMS.Strona>)ViewBag.ModelStrony)
+    </nav>
+
+
+    @*baner TOP*@
+
+    <div id="index-banner" class="parallax-container">
+        <div class="section no-pad-bot">
+            <div class="container">
+                <br><br>
+                @*<h1 class="header center teal-text text-lighten-2">Sprawdz terminy - Rezerwacja ONLINE!</h1>*@
+                <h1 class="header center orange-text text-lighten-2">Sprawdz terminy - Rezerwacja ONLINE!</h1>
+                <div class="row center">
+                    <h5 class="header col s12 light">
+                        Już teraz wygodny sposób rezerwacji i sprawdzania terminu wizyty on-line.
+                    </h5>
+                </div>
+                <div class="row center">
+                    <a href="http://materializecss.com/getting-started.html" id="download-button" class="btn-large waves-effect waves-light orange orange lighten-1">Get Started</a>
+                </div>
+                <br><br>
+            </div>
+        </div>
+        <div class="parallax">
+
+
+            <img src="~/img/salon.jpg" />
+
+        </div>
+    </div>
+
+
+    @*koniec baner TOP*@
+
+
+    @RenderBody()
+
+    <div class="container">
+        @Html.Partial("Aktualnosci", (IEnumerable<Firma.Data.Data.CMS.Aktualnosc>)ViewBag.ModelAktualnosci)
+        <br><br>
+    </div>
+
+
+
+    <footer class="page-footer teal">
+        <div class="container">
+            <div class="row">
+
+                <div class="col l6 s12">
+                    <h5 class="white-text">Polityka Prywatnosci</h5>
+                    <p class="grey-text text-lighten-4">We are a team of college students working on this project like it's our full time job. Any amount would help support and continue development on this project and is greatly appreciated.</p>
+                    <a href="http://materializecss.com/getting-started.html" id="download-button" class="btn-small waves-effect waves-light teal lighten-1">więcej..</a>
+                </div>
+
+
+
+
+                <div class="col l3 s12">
+                    <h5 class="white-text">Jesteśmy też tu</h5>
+                    <ul>
+                        <li><a class="white-text" href="#!"><img src="~/img/facebook_w.png" />facebook.com/salonstill</a></li>
+                        <li><a class="white-text" href="#!"><img src="~/img/twitter.png" />twitter.com/salonstill</a></li>
+                        <li><a class="white-text" href="#!"><img src="~/img/instagram.png" />instagram.com/salonstill</a></li>
+                        <li><a class="white-text" href="#!"><img src="~/img/youtube.png" />youtube.com/salonstill</a></li>
+
+
+                    </ul>
+                </div>
+                <div class="col l3 s12">
+                    <h5 class="white-text">Kontakt</h5>
+
+                    <ul>
+                        SALON STILVOLL
+                        Könneritzstraße 23
+                        04229 Lipsk
+
+                        Telefon: 0341-6 79 59 06
+                        Telefon komórkowy: 0177-2 88 90 23
+                        Faks: 0341-6 79 26 80
+                        <a href="mail@salon-stilvoll-leipzig.de">mail@salon-stilvoll-leipzig.de</a>
+                    </ul>
+
+
+                </div>
+            </div>
+        </div>
+        <div class="footer-copyright">
+            <div class="container">
+                Made by <a class="brown-text text-lighten-3" href="http://materializecss.com">Materialize</a>
+            </div>
+        </div>
+    </footer>
+
+
+    @RenderSection("Scripts", required: false)
+
+    <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script src="~/lib/materialize/js/init.js"></script>
+    <script src="~/lib/materialize/js/materialize.js"></script>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@*****************************************************************************************@
+
+@*Orginalny HTML*@
+
+@*<!DOCTYPE html>
+    <html>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>@ViewData["Title"] - Firma.PortalWWW</title>
+
+        <environment include="Development">
+            <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
+            <link rel="stylesheet" href="~/css/site.css" />
+        </environment>
+        <environment exclude="Development">
+            <link rel="stylesheet" href="https://ajax.aspnetcdn.com/ajax/bootstrap/3.3.7/css/bootstrap.min.css"
+                  asp-fallback-href="~/lib/bootstrap/dist/css/bootstrap.min.css"
+                  asp-fallback-test-class="sr-only" asp-fallback-test-property="position" asp-fallback-test-value="absolute" />
+            <link rel="stylesheet" href="~/css/site.min.css" asp-append-version="true" />
+        </environment>
+    </head>
+    <body>
+        <nav class="navbar navbar-inverse navbar-fixed-top">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a asp-area="" asp-controller="Home" asp-action="Index" class="navbar-brand">Firma.PortalWWW</a>
+                </div>
+                <div class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav">
+                        <li><a asp-area="" asp-controller="Home" asp-action="Index">Home</a></li>
+                        <li><a asp-area="" asp-controller="Home" asp-action="About">About</a></li>
+                        <li><a asp-area="" asp-controller="Home" asp-action="Contact">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <partial name="_CookieConsentPartial" />
+
+        <div class="container body-content">
+            @RenderBody()
+            <hr />
+            <footer>
+                <p>&copy; 2019 - Firma.PortalWWW</p>
+            </footer>
+        </div>
+
+        <environment include="Development">
+            <script src="~/lib/jquery/dist/jquery.js"></script>
+            <script src="~/lib/bootstrap/dist/js/bootstrap.js"></script>
+            <script src="~/js/site.js" asp-append-version="true"></script>
+        </environment>
+        <environment exclude="Development">
+            <script src="https://ajax.aspnetcdn.com/ajax/jquery/jquery-3.3.1.min.js"
+                    asp-fallback-src="~/lib/jquery/dist/jquery.min.js"
+                    asp-fallback-test="window.jQuery"
+                    crossorigin="anonymous"
+                    integrity="sha384-tsQFqpEReu7ZLhBV2VZlAu7zcOV+rXbYlF2cqB8txI/8aZajjp4Bqd+V6D5IgvKT">
+            </script>
+            <script src="https://ajax.aspnetcdn.com/ajax/bootstrap/3.3.7/bootstrap.min.js"
+                    asp-fallback-src="~/lib/bootstrap/dist/js/bootstrap.min.js"
+                    asp-fallback-test="window.jQuery && window.jQuery.fn && window.jQuery.fn.modal"
+                    crossorigin="anonymous"
+                    integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa">
+            </script>
+            <script src="~/js/site.min.js" asp-append-version="true"></script>
+        </environment>
+
+        @RenderSection("Scripts", required: false)
+    </body>
+    </html>*@

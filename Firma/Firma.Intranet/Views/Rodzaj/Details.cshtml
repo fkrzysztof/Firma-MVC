@@ -1,0 +1,30 @@
+﻿@model Firma.Data.Data.Sklep.Rodzaj
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Rodzaj</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Nazwa)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Nazwa)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Opis)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Opis)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.IdRodzaju"><button type="button" class="btn btn-primary btn-sm">Edycja</button></a>
+    <a asp-action="Index"><button type="button" class="btn btn-primary btn-sm">Powrót do listy</button></a>
+</div>

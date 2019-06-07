@@ -1,0 +1,41 @@
+﻿@model IEnumerable<Firma.Data.Data.Sklep.Rodzaj>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table table-hover">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Nazwa)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Opis)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Nazwa)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Opis)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.IdRodzaju"><button type="button" class="btn btn-primary btn-sm">Edycja</button></a>
+                <a asp-action="Details" asp-route-id="@item.IdRodzaju"><button type="button" class="btn btn-primary btn-sm">Detale</button></a>
+                <a asp-action="Delete" asp-route-id="@item.IdRodzaju"><button type="button" class="btn btn-primary btn-sm">Usuń</button></a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
