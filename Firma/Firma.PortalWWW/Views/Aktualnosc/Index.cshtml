@@ -2,8 +2,11 @@
 @{
     ViewData["Title"] = @Model.Tytul;
 }
-<div>Aktualność</div>
-<div>Tytuł aktualności: @Model.Tytul </div>
-@Model.Tresc
-<br />
-Data i godzina edycji: @DateTime.Now.ToString()
+
+    <div>Aktualność</div>
+    <div>Tytuł aktualności: @Model.Tytul </div>
+    @Model.Tresc
+    <br />
+    Data i godzina edycji: @DateTime.Now.ToString()
+
+
