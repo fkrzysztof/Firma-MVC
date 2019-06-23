@@ -1,5 +1,10 @@
 ﻿
-@model IEnumerable<Firma.Data.Data.CMS.Strona>
+@*to jest moj kod*@
+
+
+
+
+@model IEnumerable<Firma.Data.Data.Sklep.Rodzaj>
 
 <div class="nav-wrapper container">
     <a id="logo-container" href="#" class="brand-logo"><img src="~/img/logo.png" /></a>
@@ -7,12 +12,14 @@
         @*Tu są wszystkie linki*@
         @*Link na sztywno*@
         <li>
-             @Html.ActionLink("Sklep internetowy", "Index", "Sklep")
+            @Html.ActionLink("HOME", "Index", "Home")
         </li>
+
         @foreach (var item in Model)
         {
             <li>
-                @Html.ActionLink(item.LinkTytul, "Index", "Home", new { id = item.IdStrony }, null)
+                @*@Html.ActionLink(item.LinkTytul, "Index", "Home", new { id = item.IdStrony }, null)*@
+                <a asp-action="Index" asp-route-id="@item.IdRodzaju">@item.Nazwa</a>
             </li>
         }
     </ul>
@@ -22,9 +29,10 @@
         @*linki mobilne*@
         @foreach (var item in Model)
         {
-            <li>
-                @Html.ActionLink(item.LinkTytul, "Index", "Home", new { id = item.IdStrony }, null)
-            </li>
+        <li>
+            @*@Html.ActionLink(item.LinkTytul, "Index", "Home", new { id = item.IdStrony }, null)*@
+            <a asp-action="Index" asp-route-id="@item.IdRodzaju">@item.Nazwa</a>
+        </li>
         }
     </ul>
     <a href="#" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>

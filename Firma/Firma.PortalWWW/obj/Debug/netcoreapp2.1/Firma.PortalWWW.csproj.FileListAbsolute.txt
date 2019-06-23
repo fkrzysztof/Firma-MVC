@@ -67,3 +67,6 @@ C:\Users\Ja\Dysk Google\wsb\III semestr 6\Internetowe\FranczykFirma1\Firma\Firma
 C:\Users\Ja\Dysk Google\wsb\III semestr 6\Internetowe\FranczykFirma1\Firma\Firma.PortalWWW\obj\Debug\netcoreapp2.1\Razor\Views\Shared\Odnosniki.g.cshtml.cs
 C:\Users\Ja\Dysk Google\wsb\III semestr 6\Internetowe\FranczykFirma1\Firma\Firma.PortalWWW\obj\Debug\netcoreapp2.1\Razor\Views\Shared\Aktualnosci.g.cshtml.cs
 C:\Users\Ja\Dysk Google\wsb\III semestr 6\Internetowe\FranczykFirma1\Firma\Firma.PortalWWW\obj\Debug\netcoreapp2.1\Razor\Views\Aktualnosc\Index.g.cshtml.cs
+C:\Users\Ja\Dysk Google\wsb\III semestr 6\Internetowe\FranczykFirma1\Firma\Firma.PortalWWW\obj\Debug\netcoreapp2.1\Razor\Views\Shared\_SklepLayout.g.cshtml.cs
+C:\Users\Ja\Dysk Google\wsb\III semestr 6\Internetowe\FranczykFirma1\Firma\Firma.PortalWWW\obj\Debug\netcoreapp2.1\Razor\Views\Sklep\Index.g.cshtml.cs
+C:\Users\Ja\Dysk Google\wsb\III semestr 6\Internetowe\FranczykFirma1\Firma\Firma.PortalWWW\obj\Debug\netcoreapp2.1\Razor\Views\Shared\RodzajeMenu.g.cshtml.cs

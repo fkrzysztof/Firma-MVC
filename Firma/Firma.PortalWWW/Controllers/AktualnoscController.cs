@@ -2,47 +2,45 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using Firma.Data.Data;
 using Microsoft.AspNetCore.Mvc;
-
-
-
+using Microsoft.AspNetCore.Mvc.Rendering;
+using Microsoft.EntityFrameworkCore;
+using Firma.Data.Data;
+using Firma.Data.Data.CMS;
 namespace Firma.PortalWWW.Controllers
 {
     public class AktualnoscController : Controller
     {
         private readonly FirmaContext _context;
-
         public AktualnoscController(FirmaContext context)
         {
             _context = context;
         }
-
-        public IActionResult Index(int id)
+        // GET: Aktualnoscs
+        public async Task<IActionResult> Index(int id)
         {
             ViewBag.ModelStrony =
-                (
-                    from strona in _context.Strona
-                    orderby strona.Pozycja
-                    select strona
-                ).ToList();
-
+            (
+            from strona in _context.Strona
+            orderby strona.Pozycja
+            select strona
+            ).ToList();
             ViewBag.ModelAktualnosci =
-                (
-                    from aktualnosc in _context.Aktualnosc
-                    orderby aktualnosc.Pozycja
-                    select aktualnosc
-                ).ToList();
-
-            var item = _context.Aktualnosc.Find(id);
+            (
+            from aktualnosc in _context.Aktualnosc
+            orderby aktualnosc.Pozycja
+            select aktualnosc
+            ).ToList();
+            var item = await _context.Aktualnosc.FirstOrDefaultAsync(a =>
+            a.IdAktualnosci == id);
+            if (item == null)
+            {
+            return NotFound();
+            }
             return View(item);
         }
     }
 }
-
-
-
-
 
 
 

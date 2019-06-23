@@ -1,0 +1,136 @@
+﻿@{
+    Layout = null;
+}
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>@ViewData["Title"]</title>
+
+    <!-- CSS  -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="~/lib/materialize/css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection" />
+    <link href="~/lib/materialize/css/style.css" type="text/css" rel="stylesheet" media="screen,projection" />
+
+    @*  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    *@
+</head>
+<body>
+    @*<nav class="white" role="navigation">
+
+            @Html.Partial("Odnosniki", (IEnumerable<Firma.Data.Data.CMS.Strona>)ViewBag.ModelStrony)
+        </nav>*@
+    <nav class="light-blue lighten-1" role="navigation">
+        @await Html.PartialAsync("RodzajeMenu", (IEnumerable<Firma.Data.Data.Sklep.Rodzaj>)ViewBag.Rodzaje)
+    </nav>
+
+
+
+    @*baner TOP*@
+
+    <div id="index-banner" class="parallax-container">
+        <div class="section no-pad-bot">
+            <div class="container">
+                <br><br>
+                <h1 class="header center orange-text text-lighten-2">Sprawdz terminy - Rezerwacja ONLINE!</h1>
+                <div class="row center">
+                    <h5 class="header col s12 light">
+                        Już teraz wygodny sposób rezerwacji i sprawdzania terminu wizyty on-line.
+                    </h5>
+                </div>
+                <div class="row center">
+                    <a href="http://materializecss.com/getting-started.html" id="download-button" class="btn-large waves-effect waves-light orange orange lighten-1">Get Started</a>
+                </div>
+                <br><br>
+            </div>
+        </div>
+        <div class="parallax">
+
+
+            <img src="~/img/salon.jpg" />
+
+        </div>
+    </div>
+
+
+    @*koniec baner TOP*@
+
+    @RenderBody()
+
+
+    @*<div class="container">
+        @Html.Partial("Aktualnosci", (IEnumerable<Firma.Data.Data.CMS.Aktualnosc>)ViewBag.ModelAktualnosci)
+        <br><br>
+    </div>*@
+
+
+
+
+    <footer class="page-footer teal">
+        <div class="container">
+            <div class="row">
+
+                <div class="col l6 s12">
+                    <h5 class="white-text">Polityka Prywatnosci</h5>
+                    <p class="grey-text text-lighten-4">We are a team of college students working on this project like it's our full time job. Any amount would help support and continue development on this project and is greatly appreciated.</p>
+                    <a href="http://materializecss.com/getting-started.html" id="download-button" class="btn-small waves-effect waves-light teal lighten-1">więcej..</a>
+                </div>
+
+
+
+
+                <div class="col l3 s12">
+                    <h5 class="white-text">Jesteśmy też tu</h5>
+                    <ul>
+                        <li><a class="white-text" href="#!"><img src="~/img/facebook_w.png" />facebook.com/salonstill</a></li>
+                        <li><a class="white-text" href="#!"><img src="~/img/twitter.png" />twitter.com/salonstill</a></li>
+                        <li><a class="white-text" href="#!"><img src="~/img/instagram.png" />instagram.com/salonstill</a></li>
+                        <li><a class="white-text" href="#!"><img src="~/img/youtube.png" />youtube.com/salonstill</a></li>
+
+
+                    </ul>
+                </div>
+                <div class="col l3 s12">
+                    <h5 class="white-text">Kontakt</h5>
+
+                    <ul>
+                        SALON STILVOLL
+                        Könneritzstraße 23
+                        04229 Lipsk
+
+                        Telefon: 0341-6 79 59 06
+                        Telefon komórkowy: 0177-2 88 90 23
+                        Faks: 0341-6 79 26 80
+                        <a href="mail@salon-stilvoll-leipzig.de">mail@salon-stilvoll-leipzig.de</a>
+                    </ul>
+
+
+                </div>
+            </div>
+        </div>
+        <div class="footer-copyright">
+            <div class="container">
+                Made by <a class="brown-text text-lighten-3" href="http://materializecss.com">Materialize</a>
+            </div>
+        </div>
+    </footer>
+
+
+    @RenderSection("Scripts", required: false)
+
+    <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script src="~/lib/materialize/js/init.js"></script>
+    <script src="~/lib/materialize/js/materialize.js"></script>
+
+
+
+
+    @RenderSection("Scripts", required: false)
+
+</body>
+</html>
+
+
